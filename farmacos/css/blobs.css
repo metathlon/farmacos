@@ -1,0 +1,116 @@
+#blobs {
+	width: 960px;
+	height: 720px;
+	margin: 10px auto;
+	padding: 0;
+	position: relative;
+	background-image: url(../img/fondo_inicio5.jpg);
+}
+#blobs li {margin: 0; padding: 0; list-style: none; display: block; position: absolute;}
+
+#blobs a {display: block;
+}
+
+#blob1 {
+	left: 126px;
+	top: 253px;
+	width: 300px;
+	height: 300px;
+}
+#blob2 {
+	left: 96px;
+	top: 512px;
+	width: 152px;
+	height: 155px;
+
+}
+#blob3 {
+	left: 232px;
+	top: 561px;
+	width: 150px;
+	height: 151px;
+}
+#blob4 {
+	left: 369px;
+	top: 515px;
+	width: 155px;
+	height: 155px;
+}
+#blob5 {
+	left: 328px;
+	top: 90px;
+	width: 300px;
+	height: 298px;
+}
+#blob6 {
+	left: 11px;
+	top: 30px;
+	width: 155px;
+	height: 155px;
+}
+#blob7 {
+	left: 149px;
+	top: 88px;
+	width: 155px;
+	height: 155px;
+}
+
+#blob8 {
+	left: 258px;
+	top: 1px;
+	width: 155px;
+	height: 155px;
+}
+#blob9 {
+	left: 522px;
+	top: 252px;
+	width: 300px;
+	height: 298px;
+}
+#blob10 {
+	left: 739px;
+	top: 483px;
+	width: 155px;
+	height: 155px;
+}
+#blob11 {
+	left: 696px;
+	top: 26px;
+	width: 241px;
+	height: 225px;
+}
+
+#blob1 a{
+height: 300px;
+}
+#blob2 a {
+height: 155px;
+}
+#blob3 a {
+height: 151px;
+}
+#blob4 a {
+height: 155px;
+}
+#blob5 a {
+height: 298px;
+}
+#blob6 a {
+height: 155px;
+}
+#blob7 a {
+height: 155px;
+}
+
+#blob8 a {
+height: 155px;
+}
+#blob9 a {
+height: 298px;
+}
+#blob10 a {
+height: 155px;
+}
+#blob11 a {
+height: 225px;
+}
