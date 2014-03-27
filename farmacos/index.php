@@ -1,9 +1,9 @@
 <?php
 include_once('classes/class.cabecera.php');
-$cabecera = new cabecera("blobs.css",10);
+$cabecera = new cabecera("blobs.css",1);
 echo($cabecera->get_php_code()); 
 
-include ('inc/login.php');
+//include ('inc/login.php');
 ?>
 
 

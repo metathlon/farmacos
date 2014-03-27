@@ -1,7 +1,7 @@
 <?php
 //include ("inc/login.php"); 
 include_once("classes/class.cabecera.php");
-$cabecera = new cabecera("blobs.css",10);
+$cabecera = new cabecera("blobs.css",1);
 echo $cabecera->get_php_code();
 
 include ("inc/config.php");
@@ -397,8 +397,11 @@ echo "<div class=\"span-24 last\">\n";
 							echo "<div class=\"span-0\"><a id=\"aFam".$id_categoria_diana."\" class=\"botoncabecera badd\" href=\"javascript:ver_farmacos_capa('".$id_categoria_diana."')\"></a></div>\n";
 							echo "<div class=\"span-20\">$descripcion_categoria_diana</div>\n";
 							echo "<div class=\"span-1\">&nbsp;</div>\n";
-				
-							echo "<div class=\"span-0\"><a class=\"blineatabla bedit\" href=\"categorias.php?cop=ecd&id_categoria_diana=".$id_categoria_diana."\"></a></div>\n";
+							/*
+							 * --- CONTROL DE ACCESO
+							*/
+							
+							if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL']) echo "<div class=\"span-0\"><a class=\"blineatabla bedit\" href=\"categorias.php?cop=ecd&id_categoria_diana=".$id_categoria_diana."\"></a></div>\n";
 							echo "<div class=\"clear\"></div>\n";
 							echo "</li>\n";
 							$query_farmacos = "select id_farmaco,nombre_farmaco,autores,categoria_diana,tx1desc,tx2desc,comentarios,tipo_ensayo from farmacos_inv where categoria_diana='".$id_categoria_diana."' order by  nombre_farmaco";	

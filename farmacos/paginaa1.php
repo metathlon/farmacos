@@ -1,5 +1,9 @@
 <?php
-include ("inc/login.php"); 
+//include ("inc/login.php"); 
+include_once("classes/class.cabecera.php");
+$cabecera = new cabecera("blobs.css",1);
+echo $cabecera->get_php_code();
+ 
 include ("inc/config.php");
 $array_menu_superior=array("listar_farmacos.php"=>"FDA Approved Drugs","farmacos_nuevos.php"=>"Investigational Drugs","paginaa1.php"=>"Combinational Studies_SEL");
 include ("inc/headerA1.php");

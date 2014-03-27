@@ -1,7 +1,7 @@
 <?php
 //include ("inc/login.php"); 
 include_once("classes/class.cabecera.php");
-$cabecera = new cabecera("blobs.css",10);
+$cabecera = new cabecera("blobs.css",1);
 echo $cabecera->get_php_code();
 
 include ("inc/config.php");
@@ -632,7 +632,7 @@ global $connect,$basedatos,$farmacos_fct;
 							if ($grp_diana_anterior==$id_cd){
 		  				echo "<li class=\"$dcolor\">\n";
 								echo "<div class=\"span-17 clearfix\">&nbsp;$nombre_farmaco</div>\n";
-								echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\" href=\"javascript:abrir_ventana('ventanas_comp.php?id_farmaco1=0&id_farmaco2=".$id_farmaco."&pmtr1=0&pmtr2=0')\" title=\"Compare Drug\"></a></div>\n";
+								echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\" title=\"Compare with\" href=\"javascript:abrir_ventana('ventanas_comp.php?id_farmaco1=0&id_farmaco2=".$id_farmaco."&pmtr1=0&pmtr2=0')\" title=\"Compare Drug\"></a></div>\n";
 								echo "<div class=\"span-1 last\"><a class=\"blineatabla bbuscar\" href=\"javascript:abrir_ventana('ventanas_info.php?cop=vfn&id_farmaco=".$id_farmaco."')\"></a></div>\n";
 								echo "<div class=\"clear\"></div>\n";
 						echo "</li>\n";
@@ -646,7 +646,7 @@ global $connect,$basedatos,$farmacos_fct;
                                  	
 							echo "<li class=\"$dcolor\">\n";
 								echo "<div class=\"span-17 clearfix\">&nbsp;$nombre_farmaco</div>\n";
-								echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\"  href=\"javascript:abrir_ventana('ventanas_comp.php?id_farmaco1=0&id_farmaco2=".$id_farmaco."&pmtr1=0&pmtr2=0')\" title=\"Compare Drug\"></a></div>\n";
+								echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\" title=\"Compare with\"  href=\"javascript:abrir_ventana('ventanas_comp.php?id_farmaco1=0&id_farmaco2=".$id_farmaco."&pmtr1=0&pmtr2=0')\" title=\"Compare Drug\"></a></div>\n";
 								echo "<div class=\"span-1 last\"><a class=\"blineatabla bbuscar\" href=\"javascript:abrir_ventana('ventanas_info.php?cop=vfn&id_farmaco=".$id_farmaco."')\"></a></div>\n";
 								echo "<div class=\"clear\"></div>\n";
 							echo "</li>\n";
@@ -695,7 +695,7 @@ global $connect,$basedatos,$farmacos_fcp;
 							if ($grp_diana_anterior==$id_cd){
 		  					echo "<li class=\"$dcolor\">\n";
 								echo "<div class=\"span-17 clearfix\">&nbsp;$nombre_farmaco</div>\n";
-								echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\"  href=\"javascript:abrir_ventana('ventanas_comp.php?id_farmaco1=0&id_farmaco2=".$id_farmaco."&pmtr1=0&pmtr2=0')\" title=\"Compare Drug\"></a></div>\n";
+								echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\" title=\"Compare with\"  href=\"javascript:abrir_ventana('ventanas_comp.php?id_farmaco1=0&id_farmaco2=".$id_farmaco."&pmtr1=0&pmtr2=0')\" title=\"Compare Drug\"></a></div>\n";
 								echo "<div class=\"span-1 last\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vfn&id_farmaco=".$id_farmaco."')\"></a></div>\n";
 								echo "<div class=\"clear\"></div>\n";
 							echo "</li>\n";
@@ -709,7 +709,7 @@ global $connect,$basedatos,$farmacos_fcp;
 	
 									echo "<li class=\"$dcolor\">\n";
 										echo "<div class=\"span-17 clearfix\">&nbsp;$nombre_farmaco</div>\n";
-										echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\"  href=\"javascript:abrir_ventana('ventanas_comp.php?id_farmaco1=0&id_farmaco2=".$id_farmaco."&pmtr1=0&pmtr2=0')\" title=\"Compare Drug\"></a></div>\n";
+										echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\" title=\"Compare with\"  href=\"javascript:abrir_ventana('ventanas_comp.php?id_farmaco1=0&id_farmaco2=".$id_farmaco."&pmtr1=0&pmtr2=0')\" title=\"Compare Drug\"></a></div>\n";
 										echo "<div class=\"span-1 last\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vfn&id_farmaco=".$id_farmaco."')\"></a></div>\n";
 										echo "<div class=\"clear\"></div>\n";
 									echo "</li>\n";
@@ -761,7 +761,7 @@ $farmacos_fa='';
 					$dcolor = ($a == 0 ? $dcolor_A : $dcolor_B);
 							echo "<li class=\"$dcolor\">\n";
 								echo "<div class=\"span-17 clearfix\">&nbsp;$nombre_farmaco</div>\n";
-								echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\"  href=\"javascript:abrir_ventana('ventanas_comp.php?id_farmaco1=".$id_farmaco."&id_farmaco2=0&pmtr1=0&pmtr2=0')\" title=\"Compare Drug\"></a></div>\n";
+								echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\" title=\"Compare with\"  href=\"javascript:abrir_ventana('ventanas_comp.php?id_farmaco1=".$id_farmaco."&id_farmaco2=0&pmtr1=0&pmtr2=0')\" title=\"Compare Drug\"></a></div>\n";
 								echo "<div class=\"span-1 last\"><a class=\"blineatabla bbuscar\" href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco."')\"></a></div>\n";
 								echo "<div class=\"clear\"></div>\n";
 							echo "</li>\n";

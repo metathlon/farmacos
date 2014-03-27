@@ -40,8 +40,9 @@ class cabecera
 		{
 			//si no es una página publica se requiere identificación
 			if (!$_SESSION['USER']) header('location:login.php');   
-			else {
-				if ($_SESSION['UNIVEL']<$nivel) echo "NO TIENE NIVEL PARA ACCEDER A ESTA PARTE DE LA WEB";
+			else 
+			{
+				if ($_SESSION['UNIVEL']<$nivel) header('location:login.php');
 			}
 		}
 		
