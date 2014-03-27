@@ -1,5 +1,9 @@
 <?php
-include ("inc/login.php"); 
+//include ("inc/login.php"); 
+include_once("classes/class.cabecera.php");
+$cabecera = new cabecera("blobs.css",0);
+echo $cabecera->get_php_code();
+
 include ("inc/config.php");
 
 function filtrar_texto($cadena_texto){
@@ -14,10 +18,10 @@ return $numero_retornado;
 }
 
 function fecha($fecha)  {
-	$año=substr($fecha,6,4);
+	$year=substr($fecha,6,4);
 	$mes=substr($fecha,3,2);
 	$dia=substr($fecha,0,2);
-	$fecha_nueva=$año."-".$mes."-".$dia;
+	$fecha_nueva=$year."-".$mes."-".$dia;
 	return $fecha_nueva;
 }
 

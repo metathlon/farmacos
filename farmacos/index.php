@@ -8,6 +8,15 @@ include ('inc/login.php');
 
 
 <body>
+<div style="float: right;width 100%;">
+<?php 
+//print_r($_SESSION);
+if (isset($_SESSION['USER'])) echo "Wellcome ".$_SESSION['USER'].": <a href='login.php?logout=1'>Logout</a>";
+
+?>
+</div>
+
+
 <ul id="blobs">
 <li id="blob1"><a href="paginaa.php"></a></li>
 <li id="blob2"><a href="listar_farmacos.php"></a></li>

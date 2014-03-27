@@ -79,7 +79,7 @@ class cabecera
 		$codigo = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns='http://www.w3.org/1999/xhtml'>";
 		$codigo .= "<head>";
 		$codigo .= "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'. />";
-		$codigo .= "<title> Farmacos </title>";
+		$codigo .= "<title> TITULO NECESITAMOS UNO!!!! </title>";
 		//$codigo .= "<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>";
 		$codigo .= "<style media='screen'></style>";
 		$codigo .= "<link href='css/".$this->css."' rel='stylesheet' type='text/css' />";

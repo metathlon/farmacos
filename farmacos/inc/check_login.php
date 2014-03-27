@@ -7,9 +7,9 @@ $bd = new bd($mysql_bd_hostname,$mysql_bd_user,$mysql_bd_password,$mysql_bd_data
 /*
  * If the user loged with google
 */
-if ($bd->login_user($_POST['user'], $_POST['pass']))
+if ($bd->login_user($_POST['login_usuario'], $_POST['password_usuario']))
 {
-	$user_info = $bd->get_user($_POST['user']);
+	$user_info = $bd->get_user($_POST['login_usuario']);
 	
 	
 	
@@ -25,7 +25,7 @@ if ($bd->login_user($_POST['user'], $_POST['pass']))
 	else 
 	{
 		$_SESSION ['ID'] = $user_info['IdUsuario'];
-		$_SESSION ['USER'] = $_POST['user'];
+		$_SESSION ['USER'] = $_POST['login_usuario'];
 		$_SESSION ['UNIVEL'] = $user_info['Nivel'];
 		$_SESSION ['UEMAIL'] = $user_info['Mail_usuario'];
 		header ( 'location:../index.php' );
