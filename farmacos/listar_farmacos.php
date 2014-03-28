@@ -310,10 +310,10 @@ echo "<div class=\"span-24 last\">\n";
 					echo "<li class=\"cabecera cab_gris clearfix\">\n"; 
 						echo "<div class=\"span-7\">Drug Name</div>\n";
 						echo "<div class=\"span-6\">More Information</div>\n";
-						echo "<div class=\"span-6\">Clasification Advers Reaction in Clinical Trials</div>\n";
-						echo "<div class=\"span-1\">&nbsp;</div>\n";
-						echo "<div class=\"span-0\">View Details</div>\n";
-						echo "<div class=\"span-0 last\">&nbsp;</div>\n";
+						//echo "<div class=\"span-6\">Clasification Advers Reaction in Clinical Trials</div>\n";
+						echo "<div class=\"span-2\">&nbsp;</div>\n";
+						echo "<div class=\"span-2\">View Details</div>\n";
+						echo "<div class=\"span-2 last\">&nbsp;</div>\n";
 						echo "<div class=\"clear\"></div>\n";
 					echo "</li>\n";
 				
@@ -333,24 +333,24 @@ echo "<div class=\"span-24 last\">\n";
 									echo "<div class=\"span-0\"><a id=\"aFam".$id_farmaco."\" class=\"botoncabecera badd\" href=\"javascript:ver_farmacos_capa('".$id_farmaco."')\"></a></div>\n";
 									echo "<div class=\"span-7\"><a href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco."')\">$nombre_farmaco</a></div>\n";
 									echo "<div class=\"span-6\">$observaciones_farmaco</div>\n";
-									echo "<div class=\"span-6\">$clasificacion_toxicidad_farmaco</div>\n";
+								//	echo "<div class=\"span-6\">$clasificacion_toxicidad_farmaco</div>\n";
 									
 									/*
 									 * --- CONTROL DE ACCESO
 									*/
 									
-									if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-1\"><a class=\"blineatabla bpapelera\" href=\"javascript:aviso_borrar_farmaco_fda('".$id_farmaco."')\"></a></div>\n";
+									if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-2\"><a class=\"blineatabla bpapelera\" href=\"javascript:aviso_borrar_farmaco_fda('".$id_farmaco."')\"></a></div>\n";
+									else echo "<div class=\"span-2\">&nbsp;</div>\n";
 									
-									
-									echo "<div class=\"span-0\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco."')\"></a></div>\n";
+									echo "<div class=\"span-2\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco."')\"></a></div>\n";
 									
 									
 									/*
 									 * --- CONTROL DE ACCESO
 									*/
 									
-									if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-0\"><a class=\"blineatabla bedit\" href=\"listar_farmacos.php?cop=ef&id_farmaco=".$id_farmaco."\"></a></div>\n";
-									
+									if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-2\"><a class=\"blineatabla bedit\" href=\"listar_farmacos.php?cop=ef&id_farmaco=".$id_farmaco."\"></a></div>\n";
+									else echo "<div class=\"span-2\">&nbsp;</div>\n";
 									
 									echo "<div class=\"clear\"></div>\n";
 								echo "</li>\n";
@@ -368,22 +368,24 @@ echo "<div class=\"span-24 last\">\n";
 											//$dcolor = ($a == 0 ? $dcolor_A : $dcolor_B);	
 											echo "<li class=\"$dcolor\">\n";
 													echo "<div class=\"span-0\">&nbsp;</div>\n";
-													echo "<div class=\"span-7\"><a href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco_t3."')\">$nombre_farmaco_t3</a></div>\n";
+													echo "<div class=\"span-7\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco_t3."')\">$nombre_farmaco_t3</a></div>\n";
 													echo "<div class=\"span-6\">$observaciones_farmaco_t3</div>\n";
-													echo "<div class=\"span-6\">$clasificacion_toxicidad_farmaco</div>\n";
+													//echo "<div class=\"span-6\">$clasificacion_toxicidad_farmaco</div>\n";
 													/*
 													 * --- CONTROL DE ACCESO
 													*/
 														
-													if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-1\"><a class=\"blineatabla bpapelera\" href=\"javascript:aviso_borrar_farmaco_fda('".$id_farmaco_t3."')\"></a></div>\n";
+													if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-2\"><a class=\"blineatabla bpapelera\" href=\"javascript:aviso_borrar_farmaco_fda('".$id_farmaco_t3."')\"></a></div>\n";
+													else echo "<div class=\"span-2\">&nbsp;</div>\n";
 													
-													echo "<div class=\"span-0\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco_t3."')\"></a></div>\n";
+													echo "<div class=\"span-2\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco_t3."')\"></a></div>\n";
 													
 													/*
 													 * --- CONTROL DE ACCESO
 													*/
 														
-													if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-0\"><a class=\"blineatabla bedit\" href=\"listar_farmacos.php?cop=ef&id_farmaco=".$id_farmaco_t3."\"></a></div>\n";
+													if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-2\"><a class=\"blineatabla bedit\" href=\"listar_farmacos.php?cop=ef&id_farmaco=".$id_farmaco_t3."\"></a></div>\n";
+													else echo "<div class=\"span-2\">&nbsp;</div>\n";
 													
 													echo "<div class=\"clear\"></div>\n";
 											echo "</li>\n";
@@ -400,20 +402,22 @@ echo "<div class=\"span-24 last\">\n";
 									echo "<div class=\"span-0\">&nbsp;</div>\n";
 									echo "<div class=\"span-7\"><a href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco."')\">$nombre_farmaco</a></div>\n";
 									echo "<div class=\"span-6\">$observaciones_farmaco</div>\n";
-									echo "<div class=\"span-6\">$clasificacion_toxicidad_farmaco</div>\n";
+									//echo "<div class=\"span-6\">$clasificacion_toxicidad_farmaco</div>\n";
 									/*
 									 * --- CONTROL DE ACCESO
 									*/
 										
-									if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-1\"><a class=\"blineatabla bpapelera\" href=\"javascript:aviso_borrar_farmaco_fda('".$id_farmaco."')\"></a></div>\n";
+									if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-2\"><a class=\"blineatabla bpapelera\" href=\"javascript:aviso_borrar_farmaco_fda('".$id_farmaco."')\"></a></div>\n";
+									else echo "<div class=\"span-2\">&nbsp;</div>\n";
 									
-									echo "<div class=\"span-0\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco."')\"></a></div>\n";
+									echo "<div class=\"span-2\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco."')\"></a></div>\n";
 									
 									/*
 									 * --- CONTROL DE ACCESO
 									*/
 										
-									if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-0\"><a class=\"blineatabla bedit\" href=\"listar_farmacos.php?cop=ef&id_farmaco=".$id_farmaco."\"></a></div>\n";
+									if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL'])	echo "<div class=\"span-2\"><a class=\"blineatabla bedit\" href=\"listar_farmacos.php?cop=ef&id_farmaco=".$id_farmaco."\"></a></div>\n";
+									else echo "<div class=\"span-2\">&nbsp;</div>\n";
 									
 									echo "<div class=\"clear\"></div>\n";
 								echo "</li>\n";
@@ -725,11 +729,12 @@ echo "<div class=\"span-24 last\">\n";
 							echo "</div>\n";
 						echo "<div class=\"recuadroizq conborde clearfix\">\n";
 								echo "<ul class=\"m0\">\n";
-									echo "<li class=\"par\">\n"; 
+								/*	echo "<li class=\"par\">\n"; 
 										echo "<div class=\"span-4 cab_fila\">Clasification Advers Reaction in Clinical Trials</div>\n";
 										echo "<div class=\"span-10\">$clasificacion_toxicidad_farmaco</div>\n";
 										echo "<div class=\"clear\"></div>\n";
 									echo "</li>\n";
+								*/
 								echo "</ul>\n";
 							echo "</div>\n";
 						

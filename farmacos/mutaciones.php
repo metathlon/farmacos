@@ -500,7 +500,7 @@ echo "<div class=\"span-24 last\">\n";
 		
 			echo "<div class=\"span-23 last\">\n";
 				echo "<div class=\"cabecera1 clearfix\">\n";
-				echo "<div class=\"titulorecuadro\">Gene Mutations as described in... [FALTA]</div>\n";
+				echo "<div class=\"titulorecuadro\">Gene Mutations</div>\n";
 				//echo "<p class=\"leyenda\">Listado Farmacos</p>\n";
 				
 				
@@ -519,9 +519,9 @@ echo "<div class=\"span-24 last\">\n";
 				echo "<ul class=\"m0\">\n";
 					echo "<li class=\"cabecera cab_gris clearfix\">\n"; 
 						echo "<div class=\"span-0\">&nbsp;</div>\n";
-						echo "<div class=\"span-4\">Gen Name</div>\n";
+						echo "<div class=\"span-4\">Gene Name</div>\n";
 						echo "<div class=\"span-3\">Type</div>\n";
-						echo "<div class=\"span-12\">Synonimus</div>\n";
+						echo "<div class=\"span-12\">Alternative Names</div>\n";
 						//echo "<div class=\"span-6\">Protein Family</div>\n";
 						echo "<div class=\"span-1\">View Details</div>\n";
 						echo "<div class=\"span-0\">&nbsp;</div>\n";

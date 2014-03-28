@@ -223,7 +223,7 @@ while (list ($codfinv,$id_farmaco2) = each ($array_lista_inv)){
 						  echo "<div class=\"span-7 last\">\n";
 									  echo "<div class=\"dcha conborde\">\n";
 										   echo "<div class=\"cabecera1\">\n";
-											  echo "<p class=\"leyenda\">Resultado</p>\n";
+											  echo "<p class=\"leyenda\">Result</p>\n";
 										  echo "</div>\n";
 											  echo "<div class=\"cuerpo1\">\n";
 												  echo "<div class=\"scroll200h\">\n";
@@ -287,7 +287,7 @@ while (list ($codfamily,$id_family) = each ($array_lista_fam)){
 						  echo "<div class=\"span-7 last\">\n";
 									  echo "<div class=\"dcha conborde\">\n";
 										   echo "<div class=\"cabecera1\">\n";
-											  echo "<p class=\"leyenda\">Resultado</p>\n";
+											  echo "<p class=\"leyenda\">Result</p>\n";
 										  echo "</div>\n";
 											  echo "<div class=\"cuerpo1\">\n";
 												  echo "<div class=\"scroll200h\">\n";
