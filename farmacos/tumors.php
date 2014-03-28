@@ -22,7 +22,7 @@ global $basedatos,$connect;
 						echo "<div class=\"span-6\">More Information</div>\n";
 						echo "<div class=\"span-7\">Clasification Advers Reaction in Clinical Trials</div>\n";
 						echo "<div class=\"span-1\">&nbsp;</div>\n";
-						echo "<div class=\"span-0 last\">&nbsp;</div>\n";
+						//echo "<div class=\"span-0 last\">&nbsp;</div>\n";
 						echo "<div class=\"clear\"></div>\n";
 					echo "</li>\n";
 				
@@ -37,11 +37,11 @@ global $basedatos,$connect;
 						while(list($id_farmaco,$nombre_farmaco,$observaciones_farmaco,$clasificacion_toxicidad_farmaco)= mysql_fetch_row($resultado)){
 						$dcolor = ($a == 0 ? $dcolor_A : $dcolor_B);
 							echo "<li class=\"$dcolor\">\n";
-								echo "<div class=\"span-7\">$nombre_farmaco</div>\n";
+								echo "<div class=\"span-7\"><a href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco."')\">$nombre_farmaco</a></div>\n";
 								echo "<div class=\"span-6\">$observaciones_farmaco</div>\n";
 								echo "<div class=\"span-7\">$clasificacion_toxicidad_farmaco</div>\n";
 								echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\" title=\"Compare with\"  href=\"farmacos.php?id_farmaco1=".$id_farmaco."&id_farmaco2=0&pmtr1=0&pmtr2=0 \"></a></div>\n";
-								echo "<div class=\"span-0 last\"><a class=\"blineatabla bbuscar\" title=\"View Details\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco."')\"></a></div>\n";
+							//	echo "<div class=\"span-0 last\"><a class=\"blineatabla bbuscar\" title=\"View Details\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vf&id_farmaco=".$id_farmaco."')\"></a></div>\n";
 								echo "<div class=\"clear\"></div>\n";
 							echo "</li>\n";
 						$a = ($dcolor == $dcolor_A ? 1 : 0);
@@ -116,12 +116,13 @@ $query_mutaciones = "select id_mutacion,nombre_gen,GeneId,descripcion_tipo_mutac
 				$resultado = mysql_query($query_mutaciones,$connect);
 				echo "<ul class=\"m0\">\n";
 					echo "<li class=\"cabecera cab_gris clearfix\">\n"; 
-						echo "<div class=\"span-0\">&nbsp;</div>\n";
+						
 						echo "<div class=\"span-4\">Gen Name</div>\n";
 						echo "<div class=\"span-4\">Process</div>\n";
 						echo "<div class=\"span-12\">Synonimus</div>\n";
+						echo "<div class=\"span-0\">PubMed Info</div>\n";
 						//echo "<div class=\"span-6\">Protein Family</div>\n";
-						echo "<div class=\"span-0 last\">&nbsp;</div>\n";
+						//echo "<div class=\"span-0 last\">&nbsp;</div>\n";
 						echo "<div class=\"clear\"></div>\n";
 					echo "</li>\n";
 				
@@ -136,16 +137,17 @@ $query_mutaciones = "select id_mutacion,nombre_gen,GeneId,descripcion_tipo_mutac
 						while(list($id_mutacion,$nombre_gen,$GeneId,$celular_process,$sinonimos_gen)= mysql_fetch_row($resultado)){
 						$dcolor = ($a == 0 ? $dcolor_A : $dcolor_B);
 							echo "<li class=\"$dcolor\">\n";
-								if ($GeneId==0){
-								echo "<div class=\"span-0\">&nbsp;</div>\n";
-								}else{
-								echo "<div class=\"span-0\"><a class=\"blineatabla bpdf\" href=\"javascript:abrir_ventana('http://www.ncbi.nlm.nih.gov/gene/".$GeneId."')\"></a></div>\n";
-								}
 								
-								echo "<div class=\"span-4\">$nombre_gen</div>\n";
+								
+								echo "<div class=\"span-4\"> <a href=\"javascript:abrir_ventana('ventanas_info2.php?cop=vm&id_mutacion=".$id_mutacion."')\">$nombre_gen</a></div>\n";
 								echo "<div class=\"span-4\">$celular_process</div>\n";
 								echo "<div class=\"span-12\">$sinonimos_gen</div>\n";
-								echo "<div class=\"span-0\"><a class=\"blineatabla bbuscar\" href=\"javascript:abrir_ventana('ventanas_info2.php?cop=vm&id_mutacion=".$id_mutacion."')\"></a></div>\n";
+								//echo "<div class=\"span-0\"><a class=\"blineatabla bbuscar\" href=\"javascript:abrir_ventana('ventanas_info2.php?cop=vm&id_mutacion=".$id_mutacion."')\"></a></div>\n";
+								if ($GeneId==0){
+									echo "<div class=\"span-0\">&nbsp;</div>\n";
+								}else{
+									echo "<div class=\"span-0\"><a class=\"blineatabla bpdf\" href=\"javascript:abrir_ventana('http://www.ncbi.nlm.nih.gov/gene/".$GeneId."')\"></a></div>\n";
+								}
 								echo "<div class=\"clear\"></div>\n";
 							echo "</li>\n";
 						$a = ($dcolor == $dcolor_A ? 1 : 0);
@@ -223,7 +225,7 @@ global $connect,$basedatos;
 						echo "<div class=\"span-7\">AEs=>10%</div>\n";
 						echo "<div class=\"span-8\">Grade=>3</div>\n";
 						echo "<div class=\"span-1\">&nbsp;</div>\n";
-						echo "<div class=\"span-0 last\">&nbsp;</div>\n";
+					//	echo "<div class=\"span-0 last\">&nbsp;</div>\n";
 						echo "<div class=\"clear\"></div>\n";
 					echo "</li>\n";
 				$a = 0;
@@ -236,11 +238,11 @@ global $connect,$basedatos;
 					$dcolor = ($a == 0 ? $dcolor_A : $dcolor_B);
 							if ($grp_diana_anterior==$id_cd){
 		  					echo "<li class=\"$dcolor\">\n";
-								echo "<div class=\"span-5\">&nbsp;$nombre_farmaco</div>\n";
+								echo "<div class=\"span-5\"><a href=\"javascript:abrir_ventana('ventanas_info.php?cop=vfn&id_farmaco=".$id_farmaco."')\">&nbsp;$nombre_farmaco</a></div>\n";
 								echo "<div class=\"span-7\">$tx1desc</div>\n";
 								echo "<div class=\"span-8\">$tx2desc</div>\n";
 								echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\" title=\"Compare with\"  href=\"farmacos.php?id_farmaco1=0&id_farmaco2=".$id_farmaco."&pmtr1=0&pmtr2=0 \"></a></div>\n";
-								echo "<div class=\"span-0 last\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vfn&id_farmaco=".$id_farmaco."')\"></a></div>\n";
+							//	echo "<div class=\"span-0 last\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vfn&id_farmaco=".$id_farmaco."')\"></a></div>\n";
 								echo "<div class=\"clear\"></div>\n";
 							echo "</li>\n";
 						//echo "<option value=\"$id_f\">$nombre_f</option>\n";
@@ -253,11 +255,11 @@ global $connect,$basedatos;
 									echo "</li>\n";
 	
 								echo "<li class=\"$dcolor\">\n";
-								echo "<div class=\"span-5 clearfix\">&nbsp;$nombre_farmaco</div>\n";
+								echo "<div class=\"span-5 clearfix\"><a href=\"javascript:abrir_ventana('ventanas_info.php?cop=vfn&id_farmaco=".$id_farmaco."')\">&nbsp;$nombre_farmaco</a></div>\n";
 								echo "<div class=\"span-7\">$tx1desc</div>\n";
 								echo "<div class=\"span-8\">$tx2desc</div>\n";
 								echo "<div class=\"span-1\"><a class=\"blineatabla bcomp\" title=\"Compare with\"  href=\"farmacos.php?id_farmaco1=0&id_farmaco2=".$id_farmaco."&pmtr1=0&pmtr2=0 \"></a></div>\n";
-								echo "<div class=\"span-0 last\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vfn&id_farmaco=".$id_farmaco."')\"></a></div>\n";
+								//echo "<div class=\"span-0 last\"><a class=\"blineatabla bbuscar\"  href=\"javascript:abrir_ventana('ventanas_info.php?cop=vfn&id_farmaco=".$id_farmaco."')\"></a></div>\n";
 								echo "<div class=\"clear\"></div>\n";
 								echo "</li>\n";
 					         }
@@ -293,7 +295,7 @@ echo "<div class=\"span-24 last\">\n";
 				echo "<ul class=\"m0\">\n";
 					echo "<li class=\"cabecera cab_gris clearfix\">\n"; 
 						echo "<div class=\"span-19\">Tumor Type</div>\n";
-						echo "<div class=\"span-1\">View Details</div>\n";
+					//	echo "<div class=\"span-1\">View Details</div>\n";
 						echo "<div class=\"clear\"></div>\n";
 					echo "</li>\n";
 				$query_indicaciones = "select id_indicacion,descripcion_indicacion from indicaciones order by descripcion_indicacion";
@@ -309,7 +311,7 @@ echo "<div class=\"span-24 last\">\n";
 					 $dcolor = ($a == 0 ? $dcolor_A : $dcolor_B);
 							echo "<li class=\"$dcolor\">\n";
 								echo "<div class=\"span-19\"><a href=\"tumors.php?cop=vt&id_indicacion=".$id_indicacion."\">$descripcion_indicacion</a></div>\n";
-								echo "<div class=\"span-1\"><a class=\"blineatabla bbuscar\" href=\"tumors.php?cop=vt&id_indicacion=".$id_indicacion."\"></a></div>\n";
+							//	echo "<div class=\"span-1\"><a class=\"blineatabla bbuscar\" href=\"tumors.php?cop=vt&id_indicacion=".$id_indicacion."\"></a></div>\n";
 								echo "<div class=\"clear\"></div>\n";
 							echo "</li>\n";
 						$a = ($dcolor == $dcolor_A ? 1 : 0);
