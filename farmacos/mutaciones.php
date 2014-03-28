@@ -518,12 +518,12 @@ echo "<div class=\"span-24 last\">\n";
 				$resultado = mysql_query($query_mutaciones,$connect);
 				echo "<ul class=\"m0\">\n";
 					echo "<li class=\"cabecera cab_gris clearfix\">\n"; 
-						echo "<div class=\"span-0\">&nbsp;</div>\n";
+						//echo "<div class=\"span-0\">&nbsp;</div>\n";
 						echo "<div class=\"span-4\">Gene Name</div>\n";
 						echo "<div class=\"span-3\">Type</div>\n";
 						echo "<div class=\"span-12\">Alternative Names</div>\n";
 						//echo "<div class=\"span-6\">Protein Family</div>\n";
-						echo "<div class=\"span-1\">View Details</div>\n";
+						echo "<div class=\"span-1\">PubMed Info</div>\n";
 						echo "<div class=\"span-0\">&nbsp;</div>\n";
 						echo "<div class=\"span-0 last\">&nbsp;</div>\n";
 						echo "<div class=\"clear\"></div>\n";
@@ -540,15 +540,16 @@ echo "<div class=\"span-24 last\">\n";
 						while(list($id_mutacion,$nombre_gen,$GeneId,$tipo_mutacion,$sinonimos_gen,$protein_family)= mysql_fetch_row($resultado)){
 						$dcolor = ($a == 0 ? $dcolor_A : $dcolor_B);
 							echo "<li class=\"$dcolor\">\n";
-								if ($GeneId==0){
-								echo "<div class=\"span-0\">&nbsp;</div>\n";
-								}else{
-								echo "<div class=\"span-0\"><a class=\"blineatabla bpdf\" href=\"javascript:abrir_ventana('http://www.ncbi.nlm.nih.gov/gene/".$GeneId."')\"></a></div>\n";
-								}
+								
 								
 								echo "<div class=\"span-4\"><a href=\"javascript:abrir_ventana('ventanas_info2.php?cop=vm&id_mutacion=".$id_mutacion."')\">$nombre_gen</a></div>\n";
 								echo "<div class=\"span-3\">$tipo_mutacion</div>\n";
 								echo "<div class=\"span-12\">$sinonimos_gen</div>\n";
+								if ($GeneId==0){
+									echo "<div class=\"span-0\">&nbsp;</div>\n";
+								}else{
+									echo "<div class=\"span-0\"><a class=\"blineatabla bpdf\" href=\"javascript:abrir_ventana('http://www.ncbi.nlm.nih.gov/gene/".$GeneId."')\"></a></div>\n";
+								}
 								//echo "<div class=\"span-6\">$protein_family</div>\n";
 								
 								
@@ -559,7 +560,7 @@ echo "<div class=\"span-24 last\">\n";
 								if( $GLOBALS['cabecera']->admin_lvl <= $_SESSION['UNIVEL']) echo "<div class=\"span-1\"><a class=\"blineatabla bpapelera\" href=\"javascript:aviso_borrar_mutacion('".$id_mutacion."')\"></a></div>\n";
 								
 								
-								echo "<div class=\"span-0\"><a class=\"blineatabla bbuscar\" href=\"javascript:abrir_ventana('ventanas_info2.php?cop=vm&id_mutacion=".$id_mutacion."')\"></a></div>\n";
+								//echo "<div class=\"span-0\"><a class=\"blineatabla bbuscar\" href=\"javascript:abrir_ventana('ventanas_info2.php?cop=vm&id_mutacion=".$id_mutacion."')\"></a></div>\n";
 								
 								/*
 								 * --- CONTROL DE ACCESO
@@ -888,7 +889,8 @@ echo "<script language=\"JavaScript\" src=\"inc/farmacos.js\"></script>\n";
 echo "<script type=\"text/javascript\">\n";
 echo "<!--\n";
 echo "function abrir_ventana(a){\n";
-echo "window.open (a,\"links1\",\"left=100,top=100,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no,width=900,height=600\");\n";
+echo "var ventana = window.open (a,\"links1\",\"left=100,top=100,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no,width=900,height=600\");\n";
+echo "ventana.focus();";
 echo "}\n";
 echo "function abrir_ventana600(a){\n";
 echo "window.open (a,\"farmacos1\",\"left=100,top=100,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no,width=600,height=500\");\n";
