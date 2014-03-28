@@ -887,7 +887,7 @@ echo "<script language=\"JavaScript\" src=\"inc/date-picker.js\"></script>\n";
 */
 echo "<script language=\"JavaScript\" src=\"inc/farmacos.js\"></script>\n";
 echo "<script type=\"text/javascript\">\n";
-echo "<!--\n";
+echo "<!--\n"; 
 echo "function abrir_ventana(a){\n";
 echo "var ventana = window.open (a,\"links1\",\"left=100,top=100,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no,width=900,height=600\");\n";
 echo "ventana.focus();";
