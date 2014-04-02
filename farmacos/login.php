@@ -666,14 +666,14 @@ if ( !isset($Password_Usuario) ) $Password_Usuario = '';
 	echo "<div class=\"recuadroizq conborde\">\n";
 									
 		echo "<div class=\"cabecerarecuadro clearfix\">\n";
-			echo "<div class=\"titulorecuadro\">XXX NOMBRE Access</div>\n";
+			echo "<div class=\"titulorecuadro\"><b>OncoDrug</b> Access</div>\n";
 		echo "</div>\n";
 		echo "<div class=\"cuerporecuadro clearfix\">\n";
 				//echo "<form action=\"functions_usr.php\" method=\"post\" name=\"form_login\">\n";	
 				echo "<form action=\"inc/check_login.php\" method=\"post\" name=\"form_login\">\n";
 					echo "<div class=\"izq\">\n";
 					echo "<p class=\"leyenda\">\n";
-					echo "You need a user to access this web";
+					echo "You need a user to access this SITE";
 					echo "</p>\n";
 					echo "<p class=\"leyenda\">\n";
 					echo "If you are not registered you can do so <a href=\"javascript:abrir_ventana500('ventanas_usr.php?cop=ainv')\">here</a>";

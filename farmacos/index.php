@@ -11,7 +11,7 @@ echo($cabecera->get_php_code());
 <div style="float: right;width 100%;">
 <?php 
 //print_r($_SESSION);
-if (isset($_SESSION['USER'])) echo "Wellcome ".$_SESSION['USER'].": <a href='login.php?logout=1'>Logout</a>";
+if (isset($_SESSION['USER'])) echo "Welcome ".$_SESSION['USER'].": <a href='login.php?logout=1'>Logout</a>";
 
 ?>
 </div>
